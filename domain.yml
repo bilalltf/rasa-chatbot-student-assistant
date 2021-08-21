@@ -1,0 +1,62 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- ask_course
+- greet
+- ask_college
+- thankyou
+- goodbye
+- bot_challenge
+- how_are_you
+- ask_teacher
+entities:
+- sector
+- subject
+slots:
+  subject:
+    type: text
+    influence_conversation: true
+  sector:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: |
+      - Bonjour, comment puis-je vous aider?
+  - text: |
+      - Salut, que puis-je faire pour vous?
+  utter_ask_subject:
+  - text: |
+      Merci d'indiquer de quel module?
+  - text: |
+      De quel module?
+  utter_ask_sector:
+  - text: |
+      De quel filière?
+  - text: |
+      Merci d'indiquer de quelle filière?
+  utter_bot_challenge:
+  - text: |
+      Je suis votre assistant, je peux vous aider à trouver des cours, des professeurs et des informations sur votre université...
+  utter_thankyou:
+  - text: |
+      Vous êtes vraiment le bienvenu :)
+  - text: |
+      Heureux de pouvoir vous aider :)
+  utter_goodbye:
+  - text: |
+      Au revoir :(
+  utter_how_are_you:
+  - text: |
+      Très bien tant que je vous aide!
+  - text: |
+      Très bien merci!
+actions:
+- '...'
+- action_course
+- utter_ask_sector
+- utter_ask_subject
+- utter_greet
+- action_teacher

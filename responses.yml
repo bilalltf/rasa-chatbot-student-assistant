@@ -1,0 +1,12 @@
+responses:
+    utter_greet:
+       - text: |
+            Bonjour, comment puis-je vous aider?
+       - text: |
+            Salut, que puis-je faire pour vous?
+    utter_ask_subject:
+        - text: |
+            Pour quel module?
+    utter_ask_sector:
+        - text: |
+            Pour quel filière?

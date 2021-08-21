@@ -1,0 +1,166 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - Good day
+    - Good morning
+    - Salut
+    - Bonjour!
+    - Slm
+    - Salam
+    - Salut bot
+    - Hé bot
+    - Re-bonjour
+    - Salut les gens
+    - salut monsieur
+    - salut mon pote !
+    - les salutations
+    - Bonjour tous le monde
+    - Salut, est ce qu'il y a quelqu'un
+    - bonjour robot
+    - salut salut
+    - Hé
+    - hé hé
+    - salut
+    - Hé bot !
+    - salut l'ami
+- intent: affirm
+  examples: |
+    - exact
+    - Oui.
+    - euh oui
+    - allons-y
+    - oui
+    - um oui
+    - Oui, je frappe.
+    - c'est correct
+    - oui oui
+    - Oui, c'est ça.
+    - oui et je m'en fous
+    - tout droit
+    - J'aime ça
+- intent: ask_college
+  examples: |
+    - quels sont les facultés de l'Université?
+    - quels sont les établissements de l'Université?
+    - les facultés disponible?
+    - les faculté existe?
+  
+- intent: ask_course
+  examples: |
+    - Je veux le cours de la matière [base de données](subject) et la filière [SMI](sector)
+    - Je veux télécharger le cours du module [Java](subject) et la filière [SMI](sector)
+    - Je veux le cours du mudule [Oracle](subject) et la filière [SMI](sector)
+    - Je veux le cours de la matière [Algorithmique II](subject) et la filière [SMI](sector)
+    - Je veux les cours
+    - je veux le cours [java](subject) filière [smi](sector)
+    - je veux le cours
+    - cours [oracle](subject) filière [smi](sector)
+    - je veux un cours
+    - [smi](sector)
+    - [compilation](subject)
+    - je veux le cours [java](subject)
+    - je veux le cours [compilation](subject)
+    - [linux](subject)
+    - [smi](sector)
+    - je veux le cours [java](subject)
+    - vous avez le cours de [compilation](subject)
+    - je veux télécharger le cours
+    - je recheche un cours
+    - je suis besoin d'un cours
+    - cours
+- intent: ask_teacher
+  examples: |
+    - nom de l'enseignant
+    - nom prof
+    - nom du prof
+    - nom de la prof
+    - nom du professeur
+    - nom de la professeure
+    - qui est le professeur de [java](subject) filière [smi](sector)
+    - qui est le professeur
+    - qui sont les professeurs
+    - connaissez-vous le nom du prof?
+    - connaissez-vous le nom du prof [java](subject) filière [smi](sector)?
+    - tu connais le nom du prof?
+    - vous connaissez le nom du prof?
+- intent: bot_challenge
+  examples: |
+    - êtes-vous un robot ?
+    - Êtes-vous un humain ?
+    - Est-ce que je parle à un robot ?
+    - Est-ce que je parle à un humain ?
+- intent: thankyou
+  examples: |
+    - Merci
+    - Merci beaucoup
+    - thank you
+    - thanks
+    - vous êtes incroyable
+    - ça m'a vraiment aidé
+    - vous m'avez aidé
+    - Oh, merci, c’est gentil!
+    - Oh, merci
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - bye bye
+    - Au revoir
+    - see you
+    - see u
+- intent: how_are_you
+  examples: |
+    - ça va.
+    - comment ça va.
+    - comment va.
+    - comment vas-tu.
+    - tu vas bien
+    - tu passes une bonne journée?
+    - Tu te sens bien ?
+    - Comment vont les choses ?
+    - Comment vont les choses pour vous ?
+    - comment allez-vous ce matin
+    - comment vous sentez-vous ?
+    - comment allez-vous aujourd'hui
+    - Comment allez-vous ?
+    - j'espère que vous allez bien
+- lookup: subject
+  examples: |
+    - oracle
+    - algorithmique ii
+    - algo ii
+    - base de données
+    - base de donnée
+    - base de donnees
+    - administration oracle
+    - linux
+    - Réseau
+    - Recherche opérationelle
+    - ro
+    - algorithme simplexe
+    - prog c
+    - programmation c
+    - programmation web
+    - prog web
+    - électromagnétisme
+    - electromagnétisme
+    - compilation
+    - compl
+- lookup: sector
+  examples: |
+    - SMI
+    - SMA
+    - SMP
+    - SMC
+    - SVI
+    - STU
+    - Sciences Mathématiques et Informatique
+    - Sciences Mathématiques et Applications
+    - Sciences de la Matière Physique
+    - Sciences de la Matière Chimie
+    - Sciences de la Vie
+    - Sciences de la Terre et de l’Univers
