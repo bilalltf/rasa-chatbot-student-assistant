@@ -20,8 +20,10 @@ stories:
   steps:
   - intent: how_are_you
   - action: utter_how_are_you
-
-
+- story: university_info 
+  steps:
+  - intent: university_info
+  - action: utter_university_info
 
 - story: ask course
   steps:
@@ -176,7 +178,26 @@ stories:
       - subject
       - sector
     - action: action_teacher
-
+- story: ask teacher
+  steps:
+    - intent: ask_teacher
+      entities:
+      - subject
+    - action: utter_ask_sector
+    - intent: ask_teacher
+      entities:
+      - sector
+    - action: action_teacher
+- story: ask teacher
+  steps:
+    - intent: ask_teacher
+      entities:
+      - sector
+    - action: utter_ask_subject
+    - intent: ask_teacher
+      entities:
+      - subject
+    - action: action_teacher
 - story: ask_teacher
   steps:
   - intent: ask_teacher
@@ -189,3 +210,139 @@ stories:
     entities:
     - sector
   - action: action_teacher
+- story: interactive_story_1
+  steps:
+  - intent: ask_teacher
+  - action: utter_ask_subject
+  - intent: ask_teacher
+    entities:
+    - subject: administration oracle
+  - slot_was_set:
+    - subject: administration oracle
+  - action: utter_ask_sector
+  - intent: ask_teacher
+    entities:
+    - sector: smi
+  - slot_was_set:
+    - sector: smi
+  - action: action_teacher
+  - slot_was_set:
+    - subject:
+        name:
+          fdel: null
+  - slot_was_set:
+    - sector:
+        name:
+          fdel: null
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_teacher
+    entities:
+    - subject: java
+    - sector: smi
+  - slot_was_set:
+    - subject: java
+  - slot_was_set:
+    - sector: smi
+  - action: action_teacher
+  - slot_was_set:
+    - subject:
+        name:
+          fdel: null
+  - slot_was_set:
+    - sector:
+        name:
+          fdel: null
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_teacher
+    entities:
+    - subject: base de données
+  - slot_was_set:
+    - subject: base de données
+  - action: utter_ask_sector
+  - intent: ask_teacher
+    entities:
+    - sector: smi
+  - slot_was_set:
+    - sector: smi
+  - action: action_teacher
+  - slot_was_set:
+    - subject:
+        name:
+          fdel: null
+  - slot_was_set:
+    - sector:
+        name:
+          fdel: null
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_teacher
+    entities:
+    - subject: oracle
+  - slot_was_set:
+    - subject: oracle
+  - action: utter_ask_sector
+  - intent: ask_teacher
+    entities:
+    - sector: smi
+  - slot_was_set:
+    - sector: smi
+  - action: action_teacher
+  - slot_was_set:
+    - subject:
+        name:
+          fdel: null
+  - slot_was_set:
+    - sector:
+        name:
+          fdel: null
+
+- story: interactive_story_2
+  steps:
+  - intent: ask_teacher
+    entities:
+    - subject: compilation
+  - slot_was_set:
+    - subject: compilation
+  - action: utter_ask_sector
+  - intent: ask_teacher
+    entities:
+    - sector: smi
+  - slot_was_set:
+    - sector: smi
+  - action: action_teacher
+  - slot_was_set:
+    - subject:
+        name:
+          fdel: null
+  - slot_was_set:
+    - sector:
+        name:
+          fdel: null
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_teacher
+    entities:
+    - subject: ro
+  - slot_was_set:
+    - subject: ro
+  - action: utter_ask_sector
+  - intent: ask_teacher
+    entities:
+    - sector: smi
+  - slot_was_set:
+    - sector: smi
+  - action: action_teacher
+  - slot_was_set:
+    - subject:
+        name:
+          fdel: null
+  - slot_was_set:
+    - sector:
+        name:
+          fdel: null

@@ -3,6 +3,7 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- ask_teacher
 - ask_course
 - greet
 - ask_college
@@ -10,7 +11,7 @@ intents:
 - goodbye
 - bot_challenge
 - how_are_you
-- ask_teacher
+- university_info
 entities:
 - sector
 - subject
@@ -53,10 +54,13 @@ responses:
       Très bien tant que je vous aide!
   - text: |
       Très bien merci!
+  utter_university_info:
+  - text: |
+      Créée en 1985 au cœur de la ville d'El Jadida dans la région de Doukkala-Abda, l'Université Chouaïb Doukkali a vu le jour avec deux établissements universitaires, la Faculté des Sciences et la Faculté des Lettres et des Sciences Humaines. Aujourd'hui, l'Université se compose de six établissements universitaires.
 actions:
 - '...'
 - action_course
+- action_teacher
 - utter_ask_sector
 - utter_ask_subject
 - utter_greet
-- action_teacher

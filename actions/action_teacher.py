@@ -20,7 +20,7 @@ class ActionCourse(Action):
         req = "select * from course"
         res = cur.execute(req)
         for ligne in res.fetchall():
-            if (subj.lower() == ligne[1].lower() or subj.lower() == ligne[2].lower()) and (sect.lower() == ligne[3].lower() or sect.lower() == ligne[4].lower()):
+            if (subj.lower() == ligne[1].lower() or subj.lower() == ligne[2].lower()) and (sect.lower() == ligne[3].lower() or sect.lower() == ligne[4].lower()) & ligne[5] != None & ligne[5] != '':
                exist = True 
                teacher = ligne[5]
         c.close()

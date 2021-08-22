@@ -42,13 +42,22 @@ nlu:
     - oui et je m'en fous
     - tout droit
     - J'aime ça
+- intent: university_info
+  examples: |
+    - que savez-vous de l'université
+    - information sur l'université
+    - connaissez-vous des information sur l'université?
+    - que savez-vous de l'université Chouaib Doukkali
+    - université
+    - je veux des informations sur l'université?
+    - vous avez des info sur l'université?
+    - qu'est-ce que vous connaissez sur l'université?
 - intent: ask_college
   examples: |
     - quels sont les facultés de l'Université?
     - quels sont les établissements de l'Université?
     - les facultés disponible?
     - les faculté existe?
-  
 - intent: ask_course
   examples: |
     - Je veux le cours de la matière [base de données](subject) et la filière [SMI](sector)
@@ -65,8 +74,6 @@ nlu:
     - je veux le cours [java](subject)
     - je veux le cours [compilation](subject)
     - [linux](subject)
-    - [smi](sector)
-    - je veux le cours [java](subject)
     - vous avez le cours de [compilation](subject)
     - je veux télécharger le cours
     - je recheche un cours
@@ -87,6 +94,15 @@ nlu:
     - connaissez-vous le nom du prof [java](subject) filière [smi](sector)?
     - tu connais le nom du prof?
     - vous connaissez le nom du prof?
+    - [administration oracle](subject)
+    - [smi](sector)
+    - je veux connaitre le nom du prof [java](subject) filiere [smi](sector)
+    - quel est le nom du prof [base de données](subject)
+    - quel est le prof de [oracle](subject)
+    - nom du prof [compilation](subject)
+    - nom du prof [smi](sector)
+    - nom du prof [ro](subject)
+    - [smi](sector)
 - intent: bot_challenge
   examples: |
     - êtes-vous un robot ?
