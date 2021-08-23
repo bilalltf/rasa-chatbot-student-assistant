@@ -25,6 +25,17 @@ stories:
   - intent: university_info
   - action: utter_university_info
 
+
+
+- story: ask college
+  steps:
+    - intent: ask_college
+      entities:
+      - inst_type
+    - action: action_inst
+
+
+
 - story: ask course
   steps:
     - intent: ask_course
@@ -344,5 +355,88 @@ stories:
           fdel: null
   - slot_was_set:
     - sector:
+        name:
+          fdel: null
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_teacher
+  - action: utter_ask_subject
+  - intent: ask_teacher
+    entities:
+    - subject: java
+    - subject: java
+  - slot_was_set:
+    - subject: java
+  - action: utter_ask_sector
+  - intent: ask_teacher
+    entities:
+    - sector: smi
+  - slot_was_set:
+    - sector: smi
+  - action: action_teacher
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_college
+    entities:
+    - inst_type: faculté
+  - slot_was_set:
+    - inst_type: faculté
+  - action: action_inst
+  - slot_was_set:
+    - inst_type:
+        name:
+          fdel: null
+
+- story: interactive_story_2
+  steps:
+  - intent: ask_college
+    entities:
+    - inst_type: faculté
+  - slot_was_set:
+    - inst_type: faculté
+  - action: action_inst
+  - slot_was_set:
+    - inst_type:
+        name:
+          fdel: null
+
+- story: interactive_story_3
+  steps:
+  - intent: ask_college
+    entities:
+    - inst_type: école
+  - slot_was_set:
+    - inst_type: école
+  - action: action_inst
+  - slot_was_set:
+    - inst_type:
+        name:
+          fdel: null
+
+- story: interactive_story_4
+  steps:
+  - intent: ask_college
+    entities:
+    - inst_type: institustion
+  - slot_was_set:
+    - inst_type: institustion
+  - action: action_inst
+  - slot_was_set:
+    - inst_type:
+        name:
+          fdel: null
+
+- story: interactive_story_5
+  steps:
+  - intent: ask_college
+    entities:
+    - inst_type: école
+  - slot_was_set:
+    - inst_type: école
+  - action: action_inst
+  - slot_was_set:
+    - inst_type:
         name:
           fdel: null

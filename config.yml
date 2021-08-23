@@ -8,20 +8,11 @@ pipeline:
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
+  - name: ResponseSelector
+    epochs: 100
   - name: DIETClassifier
     epochs: 100
   - name: EntitySynonymMapper
-  - name: ResponseSelector
-    epochs: 100
-  - name: RegexEntityExtractor
-      # text will be processed with case insensitive as default
-    case_sensitive: False
-      # use lookup tables to extract entities
-    use_lookup_tables: True
-      # use regexes to extract entities
-    use_regexes: True
-      # use match word boundaries for lookup table
-    "use_word_boundaries": True
 
 policies:
   - name: MemoizationPolicy

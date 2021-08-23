@@ -54,10 +54,26 @@ nlu:
     - qu'est-ce que vous connaissez sur l'université?
 - intent: ask_college
   examples: |
-    - quels sont les facultés de l'Université?
-    - quels sont les établissements de l'Université?
-    - les facultés disponible?
-    - les faculté existe?
+    - quels sont les [facultés](inst_type) de l'Université?
+    - quels sont les [établissements](inst_type) de l'Université?
+    - les [facultés](inst_type) disponible?
+    - les [facultés](inst_type) existe?
+    - quels sont les [écoles](inst_type) de l'université?
+    - les [institutions](inst_type) existe
+    - les [écoles](inst_type) existe
+    - les [établissements](inst_type) existe
+    - je veux des info sur les [facultés](inst_type)
+    - je veux des info sur les [établissements](inst_type)
+    - connaissez-vous les [écoles](inst_type) de l'université?
+    - connaissez-vous les [établissements](inst_type) de l'université?
+    - connaissez-vous les [institutions](inst_type) existe?
+    - tu connais les [facultés](inst_type) de l'Université?
+    - vous avez des info [facultés](inst_type) de l'Université?
+    - les [faculté](inst_type) de l'université
+    - les [faculté](inst_type)
+    - quels sont les [écoles]{"entity": "inst_type", "value": "\u00e9cole"} de l'université
+    - les [institustion](inst_type)
+    - les [ecoles]{"entity": "inst_type", "value": "\u00e9cole"}
 - intent: ask_course
   examples: |
     - Je veux le cours de la matière [base de données](subject) et la filière [SMI](sector)
@@ -102,7 +118,7 @@ nlu:
     - nom du prof [compilation](subject)
     - nom du prof [smi](sector)
     - nom du prof [ro](subject)
-    - [smi](sector)
+    - [java](subject)
 - intent: bot_challenge
   examples: |
     - êtes-vous un robot ?
@@ -144,6 +160,26 @@ nlu:
     - comment allez-vous aujourd'hui
     - Comment allez-vous ?
     - j'espère que vous allez bien
+- synonym: faculté
+  examples: |
+    - faclt
+    - facultés
+    - fac
+    - facultes
+    - faculte
+- synonym: école
+  examples: |
+    - écoles
+    - ecoles
+    - ecole
+- synonym: institution
+  examples: |
+    - institutions
+    - inst
+- synonym: établissement
+  examples: |
+    - établissements
+    - établ
 - lookup: subject
   examples: |
     - oracle

@@ -3,16 +3,17 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- ask_college
 - ask_teacher
 - ask_course
 - greet
-- ask_college
 - thankyou
 - goodbye
 - bot_challenge
 - how_are_you
 - university_info
 entities:
+- inst_type
 - sector
 - subject
 slots:
@@ -20,6 +21,9 @@ slots:
     type: text
     influence_conversation: true
   sector:
+    type: text
+    influence_conversation: true
+  inst_type:
     type: text
     influence_conversation: true
 responses:
@@ -60,6 +64,7 @@ responses:
 actions:
 - '...'
 - action_course
+- action_inst
 - action_teacher
 - utter_ask_sector
 - utter_ask_subject
