@@ -4,6 +4,33 @@ stories:
   - intent: greet
   - action: utter_greet
 
+- story: happy 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
 - story: goodbye 
   steps:
   - intent: goodbye
@@ -16,7 +43,9 @@ stories:
   steps:
   - intent: bot_challenge
   - action: utter_bot_challenge
-- story: how_are_you 
+
+
+- story: how_are_you 1
   steps:
   - intent: how_are_you
   - action: utter_how_are_you
@@ -25,6 +54,28 @@ stories:
   - intent: university_info
   - action: utter_university_info
 
+- story: how_are_you 2
+  steps:
+  - intent: how_are_you
+  - action: utter_how_are_you
+  - intent: deny
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
+- story: how_are_you 3
+  steps:
+  - intent: how_are_you
+  - action: utter_how_are_you
+  - intent: affirm
+  - action: utter_happy
+
+
+- story: university_info 
+  steps:
+  - intent: university_info
+  - action: utter_university_info
 
 
 - story: ask college

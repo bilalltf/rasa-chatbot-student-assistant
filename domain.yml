@@ -14,7 +14,10 @@ intents:
 - bot_challenge
 - how_are_you
 - university_info
-
+- affirm
+- deny
+- mood_great
+- mood_unhappy
 ## entities ##
 
 entities:
@@ -69,9 +72,22 @@ responses:
       Au revoir :(
   utter_how_are_you:
   - text: |
-      Très bien tant que je vous aide!
+      Très bien tant que je vous aide, j'espère que vous allez bien aussi!
   - text: |
-      Très bien merci!
+      Très bien merci, j'espère que vous allez bien aussi!
+
+  utter_cheer_up:
+  - text: Voici quelque chose pour vous remonter le moral :)
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: Cela vous a aidé ?
+
+  utter_happy:
+  - text: Super!
+
+  utter_sorry:
+  - text: Sorry :(
   utter_university_info:
   - text: |
       Créée en 1985 au cœur de la ville d'El Jadida dans la région de Doukkala-Abda, l'Université Chouaïb Doukkali a vu le jour avec deux établissements universitaires, la Faculté des Sciences et la Faculté des Lettres et des Sciences Humaines. Aujourd'hui, l'Université se compose de six établissements universitaires.

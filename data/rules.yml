@@ -3,7 +3,7 @@ version: "2.0"
 rules:
 - rule: Activate form
   steps:
-  - intent: ask_course
+  - intent: ask_course_teacher
   - action: student_details_form
   - active_loop: student_details_form
 

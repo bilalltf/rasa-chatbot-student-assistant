@@ -74,20 +74,27 @@ nlu:
     - quels sont les [écoles]{"entity": "inst_type", "value": "\u00e9cole"} de l'université
     - les [institustion](inst_type)
     - les [ecoles]{"entity": "inst_type", "value": "\u00e9cole"}
-- intent: ask_course
+- intent: ask_course_teacher
   examples: |
     - Je veux le [cours](type_service) de la matière [base de données](subject) et la filière [SMI](sector)
     - Je veux télécharger le [cours](type_service) du module [Java](subject) et la filière [SMI](sector)
     - Je veux le [cours](type_service) du mudule [Oracle](subject) et la filière [SMI](sector)
     - Je veux le [cours](type_service) de la matière [Algorithmique II](subject) et la filière [SMI](sector)
     - Je veux les [cours](type_service)
-    - je veux le [cours](type_service) [java](subject) filière [smi](sector)
+    - Je veux les [cours](type_service) de [base de données](subject)
+    - module [éléctromagnétisme](subject)
+    - filière [smi](sector)
+    - je veux le [cours](type_service) [algorithme simplexe](subject) filière [smi](sector)
     - je veux le [cours](type_service)
     - [cours](type_service) [oracle](subject) filière [smi](sector)
     - je veux un [cours](type_service)
     - [cours](type_service) [algo ii](subject) filière [sciences mathématique et informatique](sector)
     - [smi](sector)
     - [compilation](subject)
+    - [cours](type_service) [réseau](subject)
+    - [cours](type_service) [se](subject)
+    - [cours](type_service) du module [prog web](subject)
+    - [cours](type_service) [prog c](subject)
     - je veux le [cours](type_service) [java](subject)
     - je veux le [cours](type_service) [compilation](subject)
     - [linux](subject)
@@ -118,7 +125,7 @@ nlu:
     - nom du [prof](type_service) module [compilation](subject)
     - nom du [prof](type_service) filière [smi](sector)
     - nom du [prof](type_service) [ro](subject)
-    - [java](subject)
+    - [réseau](subject)
     - [prof](type_service) [algo ii](subject) filière [sciences mathématique et informatique](sector)
     - dit moi le nom du [prof](type_service)
 
@@ -213,12 +220,13 @@ nlu:
     - Réseau
     - Recherche opérationelle
     - ro
+    - se
     - algorithme simplexe
     - prog c
     - programmation c
     - programmation web
     - prog web
-    - électromagnétisme
+    - éléctromagnétisme
     - electromagnétisme
     - compilation
     - compl
@@ -236,3 +244,54 @@ nlu:
     - Sciences de la Matière Chimie
     - Sciences de la Vie
     - Sciences de la Terre et de l’Univers
+
+
+
+- intent: mood_great
+  examples: |
+    - parfait
+    - super
+    - incroyable
+    - je me sens comme un roi
+    - merveilleux
+    - Je me sens très bien
+    - Je suis génial
+    - Je suis incroyable
+    - Je vais sauver le monde
+    - super stoked
+    - extrêmement bien
+    - si si parfait
+    - si bon
+    - si parfait
+    - bien
+    - très bien
+    - Hamdullah
+    - hmd
+    - al hamdulilah
+    - top
+    - heureux
+- intent: mood_unhappy
+  examples: |
+    - ma journée a été horrible
+    - je suis triste
+    - Je ne me sens pas très bien
+    - Je suis déçu(e)
+    - super triste
+    - Je suis tellement triste
+    - triste
+    - très triste
+    - malheureux
+    - pas bien
+    - pas très bien
+    - extrêmement triste
+    - si triste
+- intent: deny
+  examples: |
+    - non
+    - n
+    - jamais
+    - Je ne pense pas
+    - je n'aime pas ça
+    - pas du tout
+    - pas vraiment
+    - no
