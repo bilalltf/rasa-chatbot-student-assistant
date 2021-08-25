@@ -13,6 +13,10 @@ pipeline:
   - name: DIETClassifier
     epochs: 100
   - name: EntitySynonymMapper
+  - name: FallbackClassifier
+    threshold: 0.5
+    ambiguity_threshold: 0.1
+
 
 policies:
   - name: MemoizationPolicy

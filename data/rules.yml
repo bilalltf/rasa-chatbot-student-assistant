@@ -1,0 +1,23 @@
+version: "2.0"
+
+rules:
+- rule: Activate form
+  steps:
+  - intent: ask_course
+  - action: student_details_form
+  - active_loop: student_details_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: student_details_form
+  steps:
+  # Form is deactivated
+  - action: student_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_course_teacher
+  - slot_was_set:
+    - requested_slot: null

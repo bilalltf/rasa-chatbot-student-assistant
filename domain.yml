@@ -2,20 +2,29 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+## intents ##
+
 intents:
-- ask_college
-- ask_teacher
 - ask_course
+- ask_college
 - greet
 - thankyou
 - goodbye
 - bot_challenge
 - how_are_you
 - university_info
+
+## entities ##
+
 entities:
 - inst_type
 - sector
 - subject
+- type_service
+
+## slots ##
+
 slots:
   subject:
     type: text
@@ -23,25 +32,30 @@ slots:
   sector:
     type: text
     influence_conversation: true
+  type_service:
+    type: text
+    influence_conversation: true
   inst_type:
     type: text
     influence_conversation: true
+
+## responses ##
+
 responses:
   utter_greet:
   - text: |
-      - Bonjour, comment puis-je vous aider?
+      Bonjour, comment puis-je vous aider?
   - text: |
-      - Salut, que puis-je faire pour vous?
+      Salut, que puis-je faire pour vous?
   utter_ask_subject:
   - text: |
-      Merci d'indiquer de quel module?
-  - text: |
       De quel module?
+  utter_ask_type_service:
+  - text: |
+      Qu'est-ce que vous voulez (cours, Nom d'un prof...)?
   utter_ask_sector:
   - text: |
-      De quel filière?
-  - text: |
-      Merci d'indiquer de quelle filière?
+      Merci d'indiquer la filière?
   utter_bot_challenge:
   - text: |
       Je suis votre assistant, je peux vous aider à trouver des cours, des professeurs et des informations sur votre université...
@@ -61,11 +75,25 @@ responses:
   utter_university_info:
   - text: |
       Créée en 1985 au cœur de la ville d'El Jadida dans la région de Doukkala-Abda, l'Université Chouaïb Doukkali a vu le jour avec deux établissements universitaires, la Faculté des Sciences et la Faculté des Lettres et des Sciences Humaines. Aujourd'hui, l'Université se compose de six établissements universitaires.
+
+## actions ##
+
 actions:
 - '...'
-- action_course
+- action_course_teacher
 - action_inst
-- action_teacher
-- utter_ask_sector
-- utter_ask_subject
-- utter_greet
+- validate_student_details_form
+
+## forms ##
+
+forms:
+  student_details_form:
+    subject:
+      - type: from_entity
+        entity: subject
+    sector:
+      - type: from_entity
+        entity: sector
+    type_service:
+      - type: from_entity
+        entity: type_service

@@ -76,49 +76,52 @@ nlu:
     - les [ecoles]{"entity": "inst_type", "value": "\u00e9cole"}
 - intent: ask_course
   examples: |
-    - Je veux le cours de la matière [base de données](subject) et la filière [SMI](sector)
-    - Je veux télécharger le cours du module [Java](subject) et la filière [SMI](sector)
-    - Je veux le cours du mudule [Oracle](subject) et la filière [SMI](sector)
-    - Je veux le cours de la matière [Algorithmique II](subject) et la filière [SMI](sector)
-    - Je veux les cours
-    - je veux le cours [java](subject) filière [smi](sector)
-    - je veux le cours
-    - cours [oracle](subject) filière [smi](sector)
-    - je veux un cours
+    - Je veux le [cours](type_service) de la matière [base de données](subject) et la filière [SMI](sector)
+    - Je veux télécharger le [cours](type_service) du module [Java](subject) et la filière [SMI](sector)
+    - Je veux le [cours](type_service) du mudule [Oracle](subject) et la filière [SMI](sector)
+    - Je veux le [cours](type_service) de la matière [Algorithmique II](subject) et la filière [SMI](sector)
+    - Je veux les [cours](type_service)
+    - je veux le [cours](type_service) [java](subject) filière [smi](sector)
+    - je veux le [cours](type_service)
+    - [cours](type_service) [oracle](subject) filière [smi](sector)
+    - je veux un [cours](type_service)
+    - [cours](type_service) [algo ii](subject) filière [sciences mathématique et informatique](sector)
     - [smi](sector)
     - [compilation](subject)
-    - je veux le cours [java](subject)
-    - je veux le cours [compilation](subject)
+    - je veux le [cours](type_service) [java](subject)
+    - je veux le [cours](type_service) [compilation](subject)
     - [linux](subject)
-    - vous avez le cours de [compilation](subject)
-    - je veux télécharger le cours
-    - je recheche un cours
-    - je suis besoin d'un cours
-    - cours
-- intent: ask_teacher
-  examples: |
-    - nom de l'enseignant
-    - nom prof
-    - nom du prof
-    - nom de la prof
-    - nom du professeur
-    - nom de la professeure
-    - qui est le professeur de [java](subject) filière [smi](sector)
-    - qui est le professeur
-    - qui sont les professeurs
-    - connaissez-vous le nom du prof?
-    - connaissez-vous le nom du prof [java](subject) filière [smi](sector)?
-    - tu connais le nom du prof?
-    - vous connaissez le nom du prof?
-    - [administration oracle](subject)
-    - [smi](sector)
-    - je veux connaitre le nom du prof [java](subject) filiere [smi](sector)
-    - quel est le nom du prof [base de données](subject)
-    - quel est le prof de [oracle](subject)
-    - nom du prof [compilation](subject)
-    - nom du prof [smi](sector)
-    - nom du prof [ro](subject)
+    - vous avez le [cours](type_service) de [compilation](subject)
+    - je veux télécharger le [cours](type_service)
+    - je recheche un [cours](type_service)
+    - je suis besoin d'un [cours](type_service)
+    - [cours](type_service)
+    - [cours](type_service) [oracle](subject)
+    - nom de l'[enseignant](type_service)
+    - nom [prof](type_service)
+    - nom du [prof](type_service)
+    - nom de la [prof](type_service)
+    - nom du [professeur](type_service)
+    - nom de la [professeur](type_service)
+    - qui est le [professeur](type_service) de [java](subject) filière [smi](sector)
+    - qui est le [professeur](type_service)
+    - qui sont les [prof](type_service)
+    - connaissez-vous le nom du [prof](type_service)?
+    - connaissez-vous le nom du [prof](type_service) [java](subject) filière [smi](sector)?
+    - tu connais le nom du [prof](type_service)?
+    - vous connaissez le nom du [prof](type_service)?
+    - [administration oracle](subject) filière [smi](sector)
+    - [smi](sector) matière [java](subject)
+    - je veux connaitre le nom du [prof](type_service) [java](subject) filiere [smi](sector)
+    - quel est le nom du [prof](type_service) [base de données](subject)
+    - quel est le [prof](type_service) de [oracle](subject)
+    - nom du [prof](type_service) module [compilation](subject)
+    - nom du [prof](type_service) filière [smi](sector)
+    - nom du [prof](type_service) [ro](subject)
     - [java](subject)
+    - [prof](type_service) [algo ii](subject) filière [sciences mathématique et informatique](sector)
+    - dit moi le nom du [prof](type_service)
+
 - intent: bot_challenge
   examples: |
     - êtes-vous un robot ?
@@ -160,6 +163,12 @@ nlu:
     - comment allez-vous aujourd'hui
     - Comment allez-vous ?
     - j'espère que vous allez bien
+- synonym: école
+  examples: |
+    - écoles
+    - ecoles
+    - ecole
+    - school
 - synonym: faculté
   examples: |
     - faclt
@@ -167,11 +176,7 @@ nlu:
     - fac
     - facultes
     - faculte
-- synonym: école
-  examples: |
-    - écoles
-    - ecoles
-    - ecole
+    - faculty
 - synonym: institution
   examples: |
     - institutions
@@ -180,6 +185,21 @@ nlu:
   examples: |
     - établissements
     - établ
+
+- synonym: prof
+  examples: |
+    - professeure
+    - professeur
+    - enseignant
+    - teacher
+    - enseignante
+
+- synonym: smi
+  examples: |
+    - Sciences Mathématiques et Informatique
+    - Science Mathématiques et Informatique
+    - Science Mathématique et Informatique
+
 - lookup: subject
   examples: |
     - oracle
