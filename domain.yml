@@ -6,7 +6,7 @@ session_config:
 ## intents ##
 
 intents:
-- ask_course
+- ask_service
 - ask_college
 - greet
 - thankyou
@@ -25,6 +25,7 @@ entities:
 - sector
 - subject
 - type_service
+- semester
 
 ## slots ##
 
@@ -41,6 +42,11 @@ slots:
   inst_type:
     type: text
     influence_conversation: true
+  semester:
+    type: text
+    influence_conversation: true
+
+
 
 ## responses ##
 
@@ -59,6 +65,9 @@ responses:
   utter_ask_sector:
   - text: |
       Merci d'indiquer la filière?
+  utter_ask_semester:
+  - text: |
+      Merci d'indiquer le semistre?
   utter_bot_challenge:
   - text: |
       Je suis votre assistant, je peux vous aider à trouver des cours, des professeurs et des informations sur votre université...
@@ -87,7 +96,8 @@ responses:
   - text: Super!
 
   utter_sorry:
-  - text: Sorry :(
+  - text: Désolé :(
+    
   utter_university_info:
   - text: |
       Créée en 1985 au cœur de la ville d'El Jadida dans la région de Doukkala-Abda, l'Université Chouaïb Doukkali a vu le jour avec deux établissements universitaires, la Faculté des Sciences et la Faculté des Lettres et des Sciences Humaines. Aujourd'hui, l'Université se compose de six établissements universitaires.
@@ -96,7 +106,7 @@ responses:
 
 actions:
 - '...'
-- action_course_teacher
+- action_student_services
 - action_inst
 - validate_student_details_form
 
@@ -113,3 +123,6 @@ forms:
     type_service:
       - type: from_entity
         entity: type_service
+    semester:
+      - type: from_entity
+        entity: semester

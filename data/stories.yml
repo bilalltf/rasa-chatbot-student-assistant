@@ -39,6 +39,8 @@ stories:
   steps:
   - intent: thankyou
   - action: utter_thankyou
+
+
 - story: bot_challenge 
   steps:
   - intent: bot_challenge
@@ -49,6 +51,8 @@ stories:
   steps:
   - intent: how_are_you
   - action: utter_how_are_you
+
+
 - story: university_info 
   steps:
   - intent: university_info

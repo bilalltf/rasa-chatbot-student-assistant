@@ -26,15 +26,15 @@ class ActionCourse(Action):
             req = "select * from institution"
             l = "établissements"
         response = """Voilà les {} de l'université \n """.format(l)
+        dispatcher.utter_message(response)
         
 
         
         res = cur.execute(req)
 
         for ligne in res.fetchall():
-            response += """- {}, lien {} \n""".format(ligne[1], ligne[3])
-            
-        dispatcher.utter_message(response)
+            response += """{}, lien {}""".format(ligne[1], ligne[3])
+            dispatcher.utter_message(response)
 
             
         c.close()

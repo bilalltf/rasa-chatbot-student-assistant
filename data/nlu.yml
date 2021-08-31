@@ -71,10 +71,10 @@ nlu:
     - vous avez des info [facultés](inst_type) de l'Université?
     - les [faculté](inst_type) de l'université
     - les [faculté](inst_type)
-    - quels sont les [écoles]{"entity": "inst_type", "value": "\u00e9cole"} de l'université
+    - quels sont les [écoles](inst_type) de l'université
     - les [institustion](inst_type)
-    - les [ecoles]{"entity": "inst_type", "value": "\u00e9cole"}
-- intent: ask_course_teacher
+    - les [ecoles](inst_type)
+- intent: ask_service
   examples: |
     - Je veux le [cours](type_service) de la matière [base de données](subject) et la filière [SMI](sector)
     - Je veux télécharger le [cours](type_service) du module [Java](subject) et la filière [SMI](sector)
@@ -128,6 +128,22 @@ nlu:
     - [réseau](subject)
     - [prof](type_service) [algo ii](subject) filière [sciences mathématique et informatique](sector)
     - dit moi le nom du [prof](type_service)
+    - Je veux l'[emploi de temps](type_service) de la filière [SMI](sector)
+    - Je veux voir l'[emploi de temps](type_service) de la filière [SMI](sector)
+    - [emploi](type_service)
+    - vous avez l'[emploi de temps](type_service)?
+    - Envoyer moi l'[emploi de temps](type_service) de la filière [SMI](sector) [semistre 3](semester)  
+    - je recheche l'[emploi de temps](type_service) [s5](semester)  
+    - je suis besoin de l'[emploi de temps](type_service) [s1](semester)  
+    - je veux consulté mon [emploi de temps](type_service) [s2](semester) 
+    - ce que j'ai ce lundi?
+    - Qu'est-ce que j'ai ce mardi?
+    - l'[emploi de temps](type_service) d'aujourd'hui?
+    - où puis-je trouver mon [emploi](type_service) [s3](semester)?
+    - vous avez des information sur ce que je vais étudier ce jeudi?
+    - montre-moi mon [emploi](type_service)?
+ 
+ 
 
 - intent: bot_challenge
   examples: |
@@ -135,6 +151,12 @@ nlu:
     - Êtes-vous un humain ?
     - Est-ce que je parle à un robot ?
     - Est-ce que je parle à un humain ?
+    - qui êtes-vous ?
+    - parlez-moi de vous
+    - Je ne te connais pas.
+    - quel est votre nom
+    - comment tu t'appelles ?
+    
 - intent: thankyou
   examples: |
     - Merci
@@ -146,6 +168,7 @@ nlu:
     - vous m'avez aidé
     - Oh, merci, c’est gentil!
     - Oh, merci
+  
 - intent: goodbye
   examples: |
     - goodbye
@@ -170,6 +193,7 @@ nlu:
     - comment allez-vous aujourd'hui
     - Comment allez-vous ?
     - j'espère que vous allez bien
+    - cv
 - synonym: école
   examples: |
     - écoles
@@ -201,11 +225,44 @@ nlu:
     - teacher
     - enseignante
 
+- synonym: emploi
+  examples: |
+    - emploi de temps
+    - planning
+    - time plannig
+    - plan
+
 - synonym: smi
   examples: |
     - Sciences Mathématiques et Informatique
     - Science Mathématiques et Informatique
     - Science Mathématique et Informatique
+
+- synonym: s1
+  examples: |
+    - semistre 1
+    - semistre1
+- synonym: s2
+  examples: |
+    - semistre 2
+    - semistre2
+- synonym: s3
+  examples: |
+    - semistre 3
+    - semistre3
+- synonym: s4
+  examples: |
+    - semistre 4
+    - semistre4
+
+- synonym: s5
+  examples: |
+    - semistre 5
+    - semistre5
+- synonym: s6
+  examples: |
+    - semistre 6
+    - semistre6
 
 - lookup: subject
   examples: |
@@ -230,6 +287,40 @@ nlu:
     - electromagnétisme
     - compilation
     - compl
+
+- lookup: semster
+  examples: |
+    - s1
+    - s2
+    - s3
+    - s4
+    - s5
+    - s6
+    - semistre 1
+    - semistre 2
+    - semistre 3
+    - semistre 4
+    - semistre 5
+    - semistre 6
+    - semistre1
+    - semistre2
+    - semistre3
+    - semistre4
+    - semistre5
+    - semistre6
+
+- lookup: day
+  examples: |
+    - lundi
+    - mardi
+    - mercredi
+    - vendredi
+    - jeudi
+    - semdi
+    - dimanche
+
+
+
 - lookup: sector
   examples: |
     - SMI
@@ -270,6 +361,9 @@ nlu:
     - al hamdulilah
     - top
     - heureux
+
+
+
 - intent: mood_unhappy
   examples: |
     - ma journée a été horrible
@@ -285,6 +379,9 @@ nlu:
     - pas très bien
     - extrêmement triste
     - si triste
+
+
+
 - intent: deny
   examples: |
     - non

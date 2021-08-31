@@ -2,9 +2,11 @@ from sqlite3 import *
 c = connect("database.sqlite")
 req1="create table if not exists course(id int, subject1 str, subject2 str, sector1 str, sector2 str, prof str,link str,primary key(id))"
 req2="create table if not exists institution(id_inst int, name str, type str, link str, primary key(id_inst))"
+req3="create table if not exists time_planning(id_p int, semester str, sector str, link str, primary key(id_p))"
 cur = c.cursor()
 cur.execute(req1)
 cur.execute(req2)
+cur.execute(req3)
 
 
 # coding=utf8
@@ -20,8 +22,15 @@ def insert_inst():
     req= "insert into institution values (1, 'Faculté des Sciences Juridiques, Economiques et Sociales El Jadida', 'faculté','http://www.fsjesj.ucd.ac.ma/'), (2, 'Faculté des lettres et des  sciences humaines El Jadida', 'faculté','http://www.flshj.ucd.ac.ma/'), (3, 'Faculté des Sciences El Jadida', 'faculté','http://www.fs.ucd.ac.ma/'), (4, 'École Nationale de Commerce et de Gestion El Jadida', 'école','http://www.encgj.ucd.ac.ma/'), (5, 'École Nationales des Sciences Appliquées El Jadida', 'école','http://www.ensaj.ucd.ac.ma/'), (6, 'École Supérieur de Technologie Sidi Benour', 'école','http://www.estsb.ucd.ac.ma/')"
     cur.execute(req)
     c.commit()
+def insert_time_planning():
+    c = connect("database.sqlite")
+    cur = c.cursor()
+    req= "insert into time_planning values (1, 's1', 'smi', 'https://mega.nz/file/SuwjVCTA#AhWHdSeJ3ERbHF09sUVCavURNFJI72Krp_a64ewaPfs'), (2, 's2', 'smi', 'https://mega.nz/file/7nBHHSxD#hWWOFbsqfZQhV40c0IcOQNxliG1S3gPqSv89THe0XME'), (3, 's3', 'smi', 'https://mega.nz/file/uqpHAKwS#a_to4Whl76TAf-qELG30k7a1DtWgBygdwdo9X9XNnmA'), (4, 's4', 'smi', 'https://mega.nz/file/XrB1HaqQ#khBnUPb0EcYVQ_QJKiGZ2CeNTjIJRLtbG8PELhrArS8'), (5, 's5', 'smi', 'https://mega.nz/file/DyxVwISB#R2Hy37CPree_HHud0rnk9-5kMZrrzYI2xpUfw4nLTHA'), (6, 's6', 'smi', 'https://mega.nz/file/PqxBlYyK#zVMsdFYnlG0aoKWYxK43R07teMsYHrInmRQ-RSBl3s8')"
+    cur.execute(req)
+    c.commit()
 
 #insert_courses()
-#insert_inst()    
+#insert_inst()   
+#insert_time_planning()
 c.close()
 

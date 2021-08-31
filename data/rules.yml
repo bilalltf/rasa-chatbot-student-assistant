@@ -1,9 +1,37 @@
 version: "2.0"
 
 rules:
+
+- rule: greet 
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: happy 
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+
+- rule: goodbye 
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: thankyou 
+  steps:
+  - intent: thankyou
+  - action: utter_thankyou
+
+- rule: bot_challenge 
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+
 - rule: Activate form
   steps:
-  - intent: ask_course_teacher
+  - intent: ask_service
   - action: student_details_form
   - active_loop: student_details_form
 
@@ -18,6 +46,6 @@ rules:
   - slot_was_set:
     - requested_slot: null
   # The actions we want to run when the form is submitted.
-  - action: action_course_teacher
+  - action: action_student_services
   - slot_was_set:
     - requested_slot: null
