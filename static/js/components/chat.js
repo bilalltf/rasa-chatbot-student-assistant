@@ -417,41 +417,75 @@ $("#sendButton").on("click", (e) => {
     return false;
 });
 
+var active;
+if (active === undefined){
+    active = "no"
+};
+var i = 0;
+function change_color() {
+  var doc = document.getElementById("micButton");
+  var color = ["#00FF00", "#808080"];
+  doc.style.color = color[i];
+  i = (i + 1) % color.length;
+}
 
 $("#micButton").on("click", (e) => {
-    $.getJSON('http://127.0.0.1:5000/voice', {
-    }, function(data) {
-        if (data.result === "" || $.trim(data.result) === "") {
-            e.preventDefault();
-            return false;
-        }
-        if (data.result === "Erreur") {
-            const BotResponse = `<img class="botAvatar" src="./static/img/chatAvatar.svg"/><p class="botMsg">Désolé, on n'a pas pu reconnaître votre voix.</p><div class="clearfix"></div>`;
-            $(BotResponse).appendTo(".chats").hide().fadeIn(1000);
-            scrollToBottomOfResults();
-            e.preventDefault();
-            return false;
-        }
-        setUserResponse(data.result);
-        send(data.result);
-        e.preventDefault();
-    });      
-    
-    // destroy the existing chart
+    if (active == "no") {
+        active = "yes";
+        var c = setInterval(change_color, 1000)
+        document.getElementById('micButton').style.color = '#00FF00';
+        $.ajax({
+            url: 'http://127.0.0.1:5000/voice',
+            success: function (response) {
+                if (response.result === "" || $.trim(response.result) === "") {
+                    const BotResponse = `<img class="botAvatar" src="./static/img/chatAvatar.svg"/><p class="botMsg">Désolé, on n'a pas pu reconnaître votre voix.</p><div class="clearfix"></div>`;
+                    $(BotResponse).appendTo(".chats").hide().fadeIn(1000);
+                    scrollToBottomOfResults();
+                    e.preventDefault();
+                    clearInterval(c)
+                    document.getElementById('micButton').style.color = '#7272FF';
+                    active="no";
+                    
+                }else{
+                setUserResponse(response.result);
+                send(response.result);
+                e.preventDefault();
+                clearInterval(c)
+                document.getElementById('micButton').style.color = '#7272FF';
+                active="no";
+                }
+
+            },
+            error: function (response) {
+                clearInterval(c)
+                document.getElementById('micButton').style.color = '#7272FF';
+                active="no";
+            }
+        });
+        
+        // destroy the existing chart
     if (typeof chatChart !== "undefined") {
         chatChart.destroy();
     }
-
+    
     $(".chart-container").remove();
     if (typeof modalChart !== "undefined") {
         modalChart.destroy();
     }
-
+    
     $(".suggestions").remove();
     $("#paginated_cards").remove();
     $(".quickReplies").remove();
     $(".usrInput").blur();
     $(".dropDownMsg").remove();
+    return false;
+    } else {
+     // do nothing
+
+    }
+    
+
+
 });
 
 
